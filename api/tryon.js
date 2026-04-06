@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     // 🛡️ LOAD KEY FROM VERCEL ENVIRONMENT VARIABLES
     const credentials = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY);
 
-    const PROJECT_ID = 'upifrauddetection-d62eb';
+    const PROJECT_ID = 'dowcloth-492517';
     const REGION = 'us-central1';
     const MODEL_ID = 'virtual-try-on-001';
 
