@@ -15,7 +15,23 @@ export default async function handler(req, res) {
     // 🛡️ LOAD KEY FROM VERCEL ENVIRONMENT VARIABLES
     const credentials = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY);
 
-    const PROJECT_ID = 'dowcloth-492517';
+    // 🛡️ BOLD ACTION: Dynamically extract Project ID from the Key file
+    // Vertex AI Config (Dynamic)
+    const auth = new GoogleAuth({
+      credentials,
+      scopes: 'https://www.googleapis.com/auth/cloud-platform',
+    });
+
+    // Helper to get Project ID from Keyfile
+    const getProjectId = () => {
+        try {
+            return credentials.project_id;
+        } catch (e) {
+            return 'docloth'; // Fallback
+        }
+    };
+
+    const PROJECT_ID = getProjectId();
     const REGION = 'us-central1';
     const MODEL_ID = 'virtual-try-on-001';
 

@@ -14,8 +14,19 @@ const app = express();
 const PORT = 3000;
 
 // Update this to your ACTUAL path!
-const KEY_PATH = 'C:/Users/rajub/Downloads/docloth/docloth-17ee733e0c00.json';
-const PROJECT_ID = 'docloth';
+const KEY_PATH = 'C:/Users/rajub/Downloads/docloth/DowClothApp/src/services/service-account.json'; // Make sure this file exists
+
+// Vertex AI Config (Dynamic)
+const getProjectId = () => {
+    try {
+        const keyData = require(KEY_PATH);
+        return keyData.project_id;
+    } catch (e) {
+        return 'dowcloth-492517'; // New default
+    }
+};
+
+const PROJECT_ID = getProjectId();
 const REGION = 'us-central1';
 const MODEL_ID = 'virtual-try-on-001';
 
