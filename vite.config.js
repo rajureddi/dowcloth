@@ -12,9 +12,4 @@ export default defineConfig({
   define: {
     global: 'window',
   },
-  resolve: {
-    alias: {
-      'react-native': 'react-native-web',
-    },
-  },
 });
