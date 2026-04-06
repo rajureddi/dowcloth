@@ -2,8 +2,37 @@ import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PRODUCTS, CATEGORIES } from '../data/products';
 
+const styles = {
+  root: { minHeight: '100vh', backgroundColor: '#FFFFFF', fontFamily: 'Poppins, sans-serif' },
+  header: { padding: '40px 20px', backgroundColor: '#FFF', borderBottom: '1px solid #F0F0F0', position: 'sticky', top: 0, zIndex: 100 },
+  locationPin: { fontSize: '9px', fontWeight: '900', letterSpacing: '4px', textAlign: 'center', marginBottom: '15px' },
+  headerCore: { display: 'flex', flexDirection: 'column', alignItems: 'center' },
+  logo: { fontSize: '24px', fontWeight: '900', letterSpacing: '12px' },
+  subtext: { fontSize: '8px', color: '#AAA', marginTop: '5px', letterSpacing: '3px' },
+
+  navbar: { display: 'flex', justifyContent: 'center', padding: '20px 0', gap: '30px', borderBottom: '1px solid #F0F0F0' },
+  navBtn: { background: 'none', border: 'none', cursor: 'pointer', fontSize: '10px', letterSpacing: '2px' },
+
+  heroSection: { padding: '40px' },
+  heroBanner: { height: '350px', position: 'relative', overflow: 'hidden', borderRadius: '4px' },
+  heroImage: { width: '100%', height: '100%', objectFit: 'cover' },
+  heroOverlay: { position: 'absolute', bottom: '20px', left: '20px' },
+  heroTitle: { color: '#FFF', fontSize: '32px', fontWeight: '900', letterSpacing: '2px' },
+  heroSub: { color: '#FFF', fontSize: '10px', letterSpacing: '5px' },
+
+  gridContainer: { padding: '0 40px' },
+  productGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '40px' },
+  productCard: { cursor: 'pointer' },
+  imageBox: { height: '380px', position: 'relative', overflow: 'hidden',  backgroundColor: '#F9F9F9' },
+  productImg: { width: '100%', height: '100%', objectFit: 'cover' },
+  timeTag: { position: 'absolute', bottom: '15px', right: '15px', backgroundColor: '#FFF', padding: '5px 10px', fontSize: '9px', fontWeight: '900' },
+  productInfo: { marginTop: '20px' },
+  brandName: { fontSize: '9px', color: '#BBB', letterSpacing: '1.5px', fontWeight: '700' },
+  productName: { fontSize: '15px', fontWeight: '700', margin: '5px 0' },
+  price: { fontSize: '14px', fontWeight: '900' }
+};
+
 export default function HomeScreen() {
-  const { useState } = React;
   const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = React.useState('ALL');
 
@@ -74,32 +103,3 @@ export default function HomeScreen() {
   );
 }
 
-const styles = {
-  root: { minHeight: '100vh', backgroundColor: '#FFFFFF', fontFamily: 'Poppins, sans-serif' },
-  header: { padding: '40px 20px', backgroundColor: '#FFF', borderBottom: '1px solid #F0F0F0', position: 'sticky', top: 0, zIndex: 100 },
-  locationPin: { fontSize: '9px', fontWeight: '900', letterSpacing: '4px', textAlign: 'center', marginBottom: '15px' },
-  headerCore: { display: 'flex', flexDirection: 'column', alignItems: 'center' },
-  logo: { fontSize: '24px', fontWeight: '900', letterSpacing: '12px' },
-  subtext: { fontSize: '8px', color: '#AAA', marginTop: '5px', letterSpacing: '3px' },
-
-  navbar: { display: 'flex', justifyContent: 'center', padding: '20px 0', gap: '30px', borderBottom: '1px solid #F0F0F0' },
-  navBtn: { background: 'none', border: 'none', cursor: 'pointer', fontSize: '10px', letterSpacing: '2px' },
-
-  heroSection: { padding: '40px' },
-  heroBanner: { height: '350px', position: 'relative', overflow: 'hidden', borderRadius: '4px' },
-  heroImage: { width: '100%', height: '100%', objectFit: 'cover' },
-  heroOverlay: { position: 'absolute', bottom: '20px', left: '20px' },
-  heroTitle: { color: '#FFF', fontSize: '32px', fontWeight: '900', letterSpacing: '2px' },
-  heroSub: { color: '#FFF', fontSize: '10px', letterSpacing: '5px' },
-
-  gridContainer: { padding: '0 40px' },
-  productGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '40px' },
-  productCard: { cursor: 'pointer' },
-  imageBox: { height: '380px', position: 'relative', overflow: 'hidden',  backgroundColor: '#F9F9F9' },
-  productImg: { width: '100%', height: '100%', objectFit: 'cover' },
-  timeTag: { position: 'absolute', bottom: '15px', right: '15px', backgroundColor: '#FFF', padding: '5px 10px', fontSize: '9px', fontWeight: '900' },
-  productInfo: { marginTop: '20px' },
-  brandName: { fontSize: '9px', color: '#BBB', letterSpacing: '1.5px', fontWeight: '700' },
-  productName: { fontSize: '15px', fontWeight: '700', margin: '5px 0' },
-  price: { fontSize: '14px', fontWeight: '900' }
-};
