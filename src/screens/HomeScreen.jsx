@@ -4,32 +4,52 @@ import { PRODUCTS, CATEGORIES } from '../data/products';
 
 const styles = {
   root: { minHeight: '100vh', backgroundColor: '#FFFFFF', fontFamily: 'Poppins, sans-serif' },
-  header: { padding: '40px 20px', backgroundColor: '#FFF', borderBottom: '1px solid #F0F0F0', position: 'sticky', top: 0, zIndex: 100 },
+  header: { 
+    padding: 'var(--padding-y) var(--padding-x)', 
+    backgroundColor: '#FFF', 
+    borderBottom: '1px solid #F0F0F0', 
+    position: 'sticky', 
+    top: 0, 
+    zIndex: 100 
+  },
   locationPin: { fontSize: '9px', fontWeight: '900', letterSpacing: '4px', textAlign: 'center', marginBottom: '15px' },
   headerCore: { display: 'flex', flexDirection: 'column', alignItems: 'center' },
-  logo: { fontSize: '24px', fontWeight: '900', letterSpacing: '12px' },
+  logo: { fontSize: 'var(--font-title)', fontWeight: '900', letterSpacing: '8px' },
   subtext: { fontSize: '8px', color: '#AAA', marginTop: '5px', letterSpacing: '3px' },
 
-  navbar: { display: 'flex', justifyContent: 'center', padding: '20px 0', gap: '30px', borderBottom: '1px solid #F0F0F0' },
-  navBtn: { background: 'none', border: 'none', cursor: 'pointer', fontSize: '10px', letterSpacing: '2px' },
+  navbar: { 
+    display: 'flex', 
+    justifyContent: 'center', 
+    padding: '15px 0', 
+    gap: '20px', 
+    borderBottom: '1px solid #F0F0F0',
+    overflowX: 'auto',
+    whiteSpace: 'nowrap',
+    scrollbarWidth: 'none'
+  },
+  navBtn: { background: 'none', border: 'none', cursor: 'pointer', fontSize: '10px', letterSpacing: '2px', padding: '0 10px' },
 
-  heroSection: { padding: '40px' },
+  heroSection: { padding: 'var(--padding-y) var(--padding-x)' },
   heroBanner: { height: '350px', position: 'relative', overflow: 'hidden', borderRadius: '4px' },
   heroImage: { width: '100%', height: '100%', objectFit: 'cover' },
   heroOverlay: { position: 'absolute', bottom: '20px', left: '20px' },
-  heroTitle: { color: '#FFF', fontSize: '32px', fontWeight: '900', letterSpacing: '2px' },
+  heroTitle: { color: '#FFF', fontSize: 'var(--font-hero)', fontWeight: '900', letterSpacing: '2px' },
   heroSub: { color: '#FFF', fontSize: '10px', letterSpacing: '5px' },
 
-  gridContainer: { padding: '0 40px' },
-  productGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '40px' },
+  gridContainer: { padding: '0 var(--padding-x)' },
+  productGrid: { 
+    display: 'grid', 
+    gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', 
+    gap: 'var(--grid-gap)' 
+  },
   productCard: { cursor: 'pointer' },
-  imageBox: { height: '380px', position: 'relative', overflow: 'hidden',  backgroundColor: '#F9F9F9' },
+  imageBox: { aspectRatio: '3/4', position: 'relative', overflow: 'hidden', backgroundColor: '#F9F9F9' },
   productImg: { width: '100%', height: '100%', objectFit: 'cover' },
-  timeTag: { position: 'absolute', bottom: '15px', right: '15px', backgroundColor: '#FFF', padding: '5px 10px', fontSize: '9px', fontWeight: '900' },
-  productInfo: { marginTop: '20px' },
+  timeTag: { position: 'absolute', bottom: '10px', right: '10px', backgroundColor: '#FFF', padding: '4px 8px', fontSize: '8px', fontWeight: '900' },
+  productInfo: { marginTop: '15px' },
   brandName: { fontSize: '9px', color: '#BBB', letterSpacing: '1.5px', fontWeight: '700' },
-  productName: { fontSize: '15px', fontWeight: '700', margin: '5px 0' },
-  price: { fontSize: '14px', fontWeight: '900' }
+  productName: { fontSize: '14px', fontWeight: '700', margin: '4px 0', height: '40px', overflow: 'hidden' },
+  price: { fontSize: '15px', fontWeight: '900' }
 };
 
 export default function HomeScreen() {

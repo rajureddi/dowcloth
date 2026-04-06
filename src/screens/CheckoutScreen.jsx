@@ -7,48 +7,48 @@ const styles = {
     height: '80px', backgroundColor: '#FFFFFF', borderBottom: '1px solid #F0F0F0', 
     display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'sticky', top: 0, zIndex: 100 
   },
-  headerContent: { width: '100%', maxWidth: '1200px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 40px' },
+  headerContent: { width: '100%', maxWidth: 'var(--max-width)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 var(--padding-x)' },
   backBtn: { background: 'none', border: 'none', cursor: 'pointer', fontSize: '10px', fontWeight: '800', letterSpacing: '2px' },
   headerTitle: { fontSize: '13px', fontWeight: '900', letterSpacing: '6px' },
 
-  mainContainer: { width: '100%', display: 'flex', justifyContent: 'center', padding: '60px 0' },
-  checkoutLayout: { width: '100%', maxWidth: '1200px', padding: '0 40px' },
+  mainContainer: { width: '100%', display: 'flex', justifyContent: 'center', padding: 'var(--padding-y) 0' },
+  checkoutLayout: { width: '100%', maxWidth: 'var(--max-width)', padding: '0 var(--padding-x)' },
 
-  sumSection: { flex: 1, minWidth: '350px' },
-  paySection: { flex: 1, minWidth: '350px' },
+  sumSection: { flex: 1, minWidth: '300px' },
+  paySection: { flex: 1, minWidth: '300px' },
 
-  sectionHeader: { fontSize: '9px', fontWeight: '800', color: '#AAA', letterSpacing: '3px', marginBottom: '30px' },
-  summaryCard: { backgroundColor: '#F9F9F9', padding: '35px', borderRadius: '4px' },
-  itemRow: { display: 'flex', alignItems: 'center', marginBottom: '40px', gap: '25px' },
-  itemImg: { width: '70px', height: '90px', objectFit: 'cover' },
+  sectionHeader: { fontSize: '9px', fontWeight: '800', color: '#AAA', letterSpacing: '3px', marginBottom: '20px' },
+  summaryCard: { backgroundColor: '#F9F9F9', padding: '25px', borderRadius: '4px' },
+  itemRow: { display: 'flex', alignItems: 'center', marginBottom: '30px', gap: '20px' },
+  itemImg: { width: '60px', height: '80px', objectFit: 'cover' },
   itemMeta: { flex: 1 },
   itemBrand: { color: '#BBB', fontSize: '10px', fontWeight: '600', letterSpacing: '1.5px' },
-  itemName: { fontSize: '15px', fontWeight: '800', margin: '5px 0' },
+  itemName: { fontSize: '14px', fontWeight: '800', margin: '5px 0' },
   itemSub: { fontSize: '11px', color: '#999' },
-  itemPrice: { fontSize: '16px', fontWeight: '900' },
+  itemPrice: { fontSize: '15px', fontWeight: '900' },
 
-  billBox: { display: 'flex', flexDirection: 'column', gap: '15px' },
+  billBox: { display: 'flex', flexDirection: 'column', gap: '10px' },
   billLine: { display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: '#666' },
-  totalLine: { marginTop: '20px', paddingTop: '20px', borderTop: '1px solid #EEE', display: 'flex', justifyContent: 'space-between', alignItems: 'center' },
+  totalLine: { marginTop: '15px', paddingTop: '15px', borderTop: '1px solid #EEE', display: 'flex', justifyContent: 'space-between', alignItems: 'center' },
   totalLabel: { fontSize: '14px', fontWeight: '900' },
-  totalVal: { fontSize: '24px', fontWeight: '900', color: '#000' },
-  delLabel: { fontSize: '11px', color: '#1E40AF', fontWeight: '800', marginTop: '25px', fontStyle: 'italic' },
+  totalVal: { fontSize: '20px', fontWeight: '900', color: '#000' },
+  delLabel: { fontSize: '10px', color: '#1E40AF', fontWeight: '800', marginTop: '20px', fontStyle: 'italic' },
 
-  methodsWrapper: { display: 'flex', flexDirection: 'column', gap: '15px' },
+  methodsWrapper: { display: 'flex', flexDirection: 'column', gap: '12px' },
   payCard: { 
-    display: 'flex', alignItems: 'center', padding: '25px', 
+    display: 'flex', alignItems: 'center', padding: '20px', 
     border: '1.5px solid', cursor: 'pointer', transition: 'all 0.3s' 
   },
-  radioCircle: { width: '18px', height: '18px', borderRadius: '50%' },
-  payName: { fontSize: '14px' },
+  radioCircle: { width: '16px', height: '16px', borderRadius: '50%' },
+  payName: { fontSize: '13px' },
   payTag: { fontSize: '8px', color: '#BBB', letterSpacing: '1px', marginTop: '4px' },
 
   placeOrderBtn: { 
-    width: '100%', height: '75px', backgroundColor: '#000', color: '#FFF', 
-    border: 'none', marginTop: '45px', fontWeight: '900', letterSpacing: '3px', cursor: 'pointer' 
+    width: '100%', height: '65px', backgroundColor: '#000', color: '#FFF', 
+    border: 'none', marginTop: '35px', fontWeight: '900', letterSpacing: '3px', cursor: 'pointer' 
   },
-  secureBottom: { marginTop: '30px', textAlign: 'center', fontSize: '10px', color: '#BBB', letterSpacing: '2px', fontWeight: '800' },
-  mainLayout: {}, // Defined as object
+  secureBottom: { marginTop: '25px', textAlign: 'center', fontSize: '10px', color: '#BBB', letterSpacing: '2px', fontWeight: '800' },
+  mainLayout: { display: 'flex', gap: 'var(--grid-gap)', flexWrap: 'wrap' },
 };
 
 export default function CheckoutScreen() {
