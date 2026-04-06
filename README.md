@@ -1,4 +1,5 @@
 # 👚 DowCloth: India's First Instant Fashion Platform
+![Project Status](https://img.shields.io/badge/Status-Freelancing%20Project-2563EB?style=for-the-badge)
 
 **DowCloth** is a revolutionary high-fidelity fashion retail platform that bridges the gap between digital selection and instant ownership. By combining **10-60 minute hyper-local delivery** with a professional **Google Vertex AI-powered Virtual Try-On (VTO)** engine, DowCloth eliminates the two biggest hurdles in online fashion: **Waiting time** and **Fit uncertainty**.
 
@@ -65,11 +66,5 @@ DowCloth uses Google Vertex AI. To run the VTO feature locally:
 - [ ] **Real-Time Tracking**: Integration with hyper-local delivery APIs.
 
 ---
-## 🤝 FREELANCE & COLLABORATION
-Are you looking to build a high-end AI fashion app, a hyper-local delivery platform, or a modern React Native experience? **I am available for freelance projects and technical collaborations.**
-
-*   **Services**: AI Integration (Vertex AI/OpenAI), Mobile App Development (React Native/Expo), Web Portals, and UI/UX Design.
-*   **Contact**: Reach out via GitHub or my profile for project inquiries.
-
----
 © 2026 DowCloth • Bengaluru, India • Fashion. Instant. You.
+
