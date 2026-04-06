@@ -11,31 +11,23 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
+  // 🛡️ SECURITY CHECK: Detect missing credentials early
+  if (!process.env.GOOGLE_SERVICE_ACCOUNT_KEY) {
+    return res.status(500).json({ 
+      error: 'CRITICAL SECURITY ERROR: GOOGLE_SERVICE_ACCOUNT_KEY is not configured in Vercel Environment Variables.' 
+    });
+  }
+
   try {
     // 🛡️ LOAD KEY FROM VERCEL ENVIRONMENT VARIABLES
     const credentials = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY);
 
-    // 🛡️ BOLD ACTION: Dynamically extract Project ID from the Key file
-    // Vertex AI Config (Dynamic)
-    const auth = new GoogleAuth({
-      credentials,
-      scopes: 'https://www.googleapis.com/auth/cloud-platform',
-    });
-
-    // Helper to get Project ID from Keyfile
-    const getProjectId = () => {
-        try {
-            return credentials.project_id;
-        } catch (e) {
-            return 'docloth'; // Fallback
-        }
-    };
-
-    const PROJECT_ID = getProjectId();
+    // 🛡️ BOLD ACTION: Dynamically extract Config from the Key file
+    const PROJECT_ID = credentials.project_id || 'dowcloth-492517';
     const REGION = 'us-central1';
     const MODEL_ID = 'virtual-try-on-001';
 
-    // 1. Generate JWT
+    // 1. Generate JWT (jsrsasign is more stable for Vercel)
     const header = { alg: 'RS256', typ: 'JWT' };
     const now = Math.floor(Date.now() / 1000);
     const payload = {
@@ -90,6 +82,7 @@ export default async function handler(req, res) {
 
   } catch (error) {
     console.error('❌ VERCEL API ERROR:', error.message);
-    return res.status(500).json({ success: false, error: error.message });
+    const detail = error.response?.data ? JSON.stringify(error.response.data) : error.message;
+    return res.status(500).json({ success: false, error: detail });
   }
 }
