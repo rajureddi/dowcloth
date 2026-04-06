@@ -65,4 +65,11 @@ DowCloth uses Google Vertex AI. To run the VTO feature locally:
 - [ ] **Real-Time Tracking**: Integration with hyper-local delivery APIs.
 
 ---
+## 🤝 FREELANCE & COLLABORATION
+Are you looking to build a high-end AI fashion app, a hyper-local delivery platform, or a modern React Native experience? **I am available for freelance projects and technical collaborations.**
+
+*   **Services**: AI Integration (Vertex AI/OpenAI), Mobile App Development (React Native/Expo), Web Portals, and UI/UX Design.
+*   **Contact**: Reach out via GitHub or my profile for project inquiries.
+
+---
 © 2026 DowCloth • Bengaluru, India • Fashion. Instant. You.
